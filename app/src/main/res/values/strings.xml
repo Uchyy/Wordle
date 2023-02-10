@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Wordle</string>
+    <string name="empty">\u0020</string>
+
+</resources>

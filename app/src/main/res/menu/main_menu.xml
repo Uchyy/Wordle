@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/Howto"
+        android:icon="@drawable/details_foreground"
+        android:title="Howto"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/Analytics"
+        android:icon="@drawable/analytics_foreground"
+        android:title="Stats"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/Settings"
+        android:icon="@drawable/settings_foreground"
+        android:title="Settings"
+        app:showAsAction="never|withText" />
+    <item
+        android:id="@+id/Swap"
+        android:icon="@drawable/swap_foreground"
+        android:title="Swap"
+        app:showAsAction="ifRoom|withText" />
+</menu>

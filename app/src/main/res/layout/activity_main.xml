@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#578C59"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/maintoolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:clickable="true"
+        android:gravity="center"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:buttonGravity="center_vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/main_menu"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:subtitleTextColor="#578C59"
+        app:title="W!"
+        app:titleTextAppearance="@style/toolbar_text"
+        app:titleTextColor="#578C59" />
+
+    <TextView
+        android:id="@+id/scoreTextView"
+        android:layout_width="78dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rounded"
+        android:contentDescription="score"
+        android:fontFamily="casual"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:text="score"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="#578C59"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/maintoolbar"
+        app:layout_constraintHorizontal_bias="0.434"
+        app:layout_constraintStart_toStartOf="@+id/maintoolbar"
+        app:layout_constraintTop_toTopOf="@+id/maintoolbar"
+        tools:text="0" />
+
+    <TableLayout
+        android:id="@+id/GameBoard"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/maintoolbar"
+        tools:layout_editor_absoluteX="1dp">
+
+        <TableRow
+            android:background="#F0F7F7"
+            android:gravity="center"
+            android:padding="10dp">
+
+            <EditText
+                android:id="@+id/editText2"
+                android:layout_width="58dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/rounded"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textCapCharacters"
+                android:text="A"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textSize="40sp" />
+
+            <EditText
+                android:id="@+id/editText3"
+                android:layout_width="58dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/rounded"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textCapCharacters"
+                android:text="A"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textSize="40sp" />
+
+            <EditText
+                android:id="@+id/editText4"
+                android:layout_width="58dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/rounded"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textCapCharacters"
+                android:text="A"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textSize="40sp" />
+
+            <EditText
+                android:id="@+id/editText5"
+                android:layout_width="58dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/rounded"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textCapCharacters"
+                android:text="A"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textSize="40sp" />
+
+            <EditText
+                android:id="@+id/editText6"
+                android:layout_width="58dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/rounded"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textCapCharacters"
+                android:text="A"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textSize="40sp" />
+        </TableRow>
+
+        <TableRow
+            android:background="#F0F7F7"
+            android:gravity="center"
+            android:padding="10dp">
+
+            <EditText
+                android:id="@+id/editTextTextPersonName"
+                android:layout_width="58dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/rounded"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textCapCharacters"
+                android:text="A"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textSize="40sp" />
+
+            <EditText
+                android:id="@+id/test1"
+                android:layout_width="58dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/rounded"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textCapCharacters"
+                android:text="A"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textSize="40sp" />
+
+            <EditText
+                android:id="@+id/test2"
+                android:layout_width="58dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/rounded"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textCapCharacters"
+                android:text="A"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textSize="40sp" />
+
+            <EditText
+                android:id="@+id/test4"
+                android:layout_width="58dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/rounded"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textCapCharacters"
+                android:text="A"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textSize="40sp" />
+
+            <EditText
+                android:id="@+id/test11"
+                android:layout_width="58dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/rounded"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textCapCharacters"
+                android:text="A"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textSize="40sp" />
+
+
+        </TableRow>
+
+        <TableRow
+            android:background="#F0F7F7"
+            android:gravity="center"
+            android:padding="10dp">
+
+            <EditText
+                android:id="@+id/editText30"
+                android:layout_width="58dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/rounded"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textCapCharacters"
+                android:text="A"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textSize="40sp" />
+
+            <EditText
+                android:id="@+id/editText31"
+                android:layout_width="58dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/rounded"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textCapCharacters"
+                android:text="A"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textSize="40sp" />
+
+            <EditText
+                android:id="@+id/editText32"
+                android:layout_width="58dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/rounded"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textCapCharacters"
+                android:text="A"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textSize="40sp" />
+
+            <EditText
+                android:id="@+id/editText35"
+                android:layout_width="58dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/rounded"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textCapCharacters"
+                android:text="A"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textSize="40sp" />
+
+            <EditText
+                android:id="@+id/editText36"
+                android:layout_width="58dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/rounded"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textCapCharacters"
+                android:text="A"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textSize="40sp" />
+        </TableRow>
+
+        <TableRow
+            android:background="#F0F7F7"
+            android:gravity="center"
+            android:padding="10dp">
+
+            <EditText
+                android:id="@+id/editText40"
+                android:layout_width="58dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/rounded"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textCapCharacters"
+                android:text="A"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textSize="40sp" />
+
+            <EditText
+                android:id="@+id/editText41"
+                android:layout_width="58dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/rounded"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textCapCharacters"
+                android:text="A"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textSize="40sp" />
+
+            <EditText
+                android:id="@+id/editText42"
+                android:layout_width="58dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/rounded"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textCapCharacters"
+                android:text="A"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textSize="40sp" />
+
+            <EditText
+                android:id="@+id/editText43"
+                android:layout_width="58dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/rounded"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textCapCharacters"
+                android:text="A"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textSize="40sp" />
+
+            <EditText
+                android:id="@+id/editText45"
+                android:layout_width="58dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/rounded"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textCapCharacters"
+                android:text="A"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textSize="40sp" />
+        </TableRow>
+
+        <TableRow
+            android:background="#F0F7F7"
+            android:gravity="center"
+            android:padding="10dp">
+
+            <EditText
+                android:id="@+id/editText50"
+                android:layout_width="58dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/rounded"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textCapCharacters"
+                android:text="A"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textSize="40sp" />
+
+            <EditText
+                android:id="@+id/editText51"
+                android:layout_width="58dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/rounded"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textCapCharacters"
+                android:text="A"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textSize="40sp" />
+
+            <EditText
+                android:id="@+id/editText52"
+                android:layout_width="58dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/rounded"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textCapCharacters"
+                android:text="A"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textSize="40sp" />
+
+            <EditText
+                android:id="@+id/editText53"
+                android:layout_width="58dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/rounded"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textCapCharacters"
+                android:text="A"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textSize="40sp" />
+
+            <EditText
+                android:id="@+id/editText54"
+                android:layout_width="58dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/rounded"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textCapCharacters"
+                android:text="A"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textSize="40sp" />
+        </TableRow>
+
+        <TableRow
+            android:background="#F0F7F7"
+            android:gravity="center"
+            android:padding="10dp">
+
+            <EditText
+                android:id="@+id/editText61"
+                android:layout_width="58dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/rounded"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textCapCharacters"
+                android:text="A"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textSize="40sp" />
+
+            <EditText
+                android:id="@+id/editText62"
+                android:layout_width="58dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/rounded"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textCapCharacters"
+                android:text="A"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textSize="40sp" />
+
+            <EditText
+                android:id="@+id/editText63"
+                android:layout_width="58dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/rounded"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textCapCharacters"
+                android:text="A"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textSize="40sp" />
+
+            <EditText
+                android:id="@+id/editText65"
+                android:layout_width="58dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/rounded"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textCapCharacters"
+                android:text="A"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textSize="40sp" />
+
+            <EditText
+                android:id="@+id/editText66"
+                android:layout_width="58dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/rounded"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="textCapCharacters"
+                android:text="A"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textSize="40sp" />
+        </TableRow>
+    </TableLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
