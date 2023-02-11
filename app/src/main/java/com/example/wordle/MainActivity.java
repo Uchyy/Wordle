@@ -3,6 +3,8 @@ package com.example.wordle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Menu;
 import android.widget.EditText;
 import android.widget.TableLayout;
@@ -10,11 +12,16 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     private androidx.appcompat.widget.Toolbar toolbar;
     private TextView scoreTextView;
+    private ArrayList <EditText> editTexts = new ArrayList<>();
     //private TableLayout table;
+    String word;
+    String score;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,9 +34,35 @@ public class MainActivity extends AppCompatActivity {
         toolbar.inflateMenu(R.menu.main_menu);
         initToolbar();
         setTexToNull();
-
         scoreTextView = findViewById(R.id.scoreTextView);
-        String score = scoreTextView.getText().toString();
+        scoreTextView.setText("0");
+        score = scoreTextView.getText().toString();
+
+        for (EditText editText : editTexts) {
+            editText.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                }
+
+                @Override
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
+                    nextTextView().requestFocus();
+                }
+
+                @Override
+                public void afterTextChanged(Editable s) {
+                }
+
+                public TextView nextTextView() {
+                    int i;
+                    for (i = 0; i < editTexts.size() - 1; i++) {
+                        if (editTexts.get(i) == editText)
+                            return editTexts.get(i + 1);
+                    }
+                    return editTexts.get(i);
+                }
+            });
+        }
 
     }
 
@@ -78,9 +111,9 @@ public class MainActivity extends AppCompatActivity {
                 //Do what you need to do.
                 editText.setText("");
                 editText.setCursorVisible(false);
+                editTexts.add(editText);
             }
         }
-
     }
 
 }
