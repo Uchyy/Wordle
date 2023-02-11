@@ -6,12 +6,17 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Menu;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.BufferedReader;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -22,6 +27,9 @@ public class MainActivity extends AppCompatActivity {
     //private TableLayout table;
     String word;
     String score;
+    String original_word;
+    BufferedReader bufferedReader;
+    Button submit, skip, hint;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,19 +46,39 @@ public class MainActivity extends AppCompatActivity {
         scoreTextView.setText("0");
         score = scoreTextView.getText().toString();
 
+        submit = findViewById(R.id.btn_submit);
+        submit.setEnabled(false);
+        hint = findViewById(R.id.btn_hint);
+        skip = findViewById(R.id.btn_skip);
+
+
         for (EditText editText : editTexts) {
+            word += editText.getText().toString();
             editText.addTextChangedListener(new TextWatcher() {
                 @Override
                 public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                    submit.setEnabled(false);
                 }
 
                 @Override
                 public void onTextChanged(CharSequence s, int start, int before, int count) {
                     nextTextView().requestFocus();
+                    //checkWord();
                 }
 
                 @Override
                 public void afterTextChanged(Editable s) {
+                    for (int i = 4; i < editTexts.size() ; i+=5) {
+                        if (editTexts.get(i) == editText) {
+                            submit.setEnabled(true);
+                            submit.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    Toast.makeText(getApplicationContext(), "Not Implemented!! You clicked SUBMIT!!", Toast.LENGTH_LONG).show();
+                                }
+                            });
+                        }
+                    }
                 }
 
                 public TextView nextTextView() {
@@ -115,5 +143,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+
+    //public String getWord() {}
 
 }

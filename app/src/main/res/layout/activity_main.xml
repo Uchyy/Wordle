@@ -70,8 +70,8 @@
                 android:ems="10"
                 android:gravity="center"
                 android:inputType="textCapCharacters"
-                android:text="A"
                 android:maxLength="1"
+                android:text="A"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                 android:textSize="40sp" />
 
@@ -84,8 +84,8 @@
                 android:ems="10"
                 android:gravity="center"
                 android:inputType="textCapCharacters"
-                android:text="A"
                 android:maxLength="1"
+                android:text="A"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                 android:textSize="40sp" />
 
@@ -98,8 +98,8 @@
                 android:ems="10"
                 android:gravity="center"
                 android:inputType="textCapCharacters"
-                android:text="A"
                 android:maxLength="1"
+                android:text="A"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                 android:textSize="40sp" />
 
@@ -110,9 +110,9 @@
                 android:layout_marginEnd="10dp"
                 android:background="@drawable/rounded"
                 android:ems="10"
-                android:maxLength="1"
                 android:gravity="center"
                 android:inputType="textCapCharacters"
+                android:maxLength="1"
                 android:text="A"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                 android:textSize="40sp" />
@@ -124,9 +124,9 @@
                 android:layout_marginEnd="10dp"
                 android:background="@drawable/rounded"
                 android:ems="10"
-                android:maxLength="1"
                 android:gravity="center"
                 android:inputType="textCapCharacters"
+                android:maxLength="1"
                 android:text="A"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                 android:textSize="40sp" />
@@ -145,8 +145,8 @@
                 android:background="@drawable/rounded"
                 android:ems="10"
                 android:gravity="center"
-                android:maxLength="1"
                 android:inputType="textCapCharacters"
+                android:maxLength="1"
                 android:text="A"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                 android:textSize="40sp" />
@@ -160,8 +160,8 @@
                 android:ems="10"
                 android:gravity="center"
                 android:inputType="textCapCharacters"
-                android:text="A"
                 android:maxLength="1"
+                android:text="A"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                 android:textSize="40sp" />
 
@@ -174,8 +174,8 @@
                 android:ems="10"
                 android:gravity="center"
                 android:inputType="textCapCharacters"
-                android:text="A"
                 android:maxLength="1"
+                android:text="A"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                 android:textSize="40sp" />
 
@@ -186,9 +186,9 @@
                 android:layout_marginEnd="10dp"
                 android:background="@drawable/rounded"
                 android:ems="10"
-                android:maxLength="1"
                 android:gravity="center"
                 android:inputType="textCapCharacters"
+                android:maxLength="1"
                 android:text="A"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                 android:textSize="40sp" />
@@ -200,9 +200,9 @@
                 android:layout_marginEnd="10dp"
                 android:background="@drawable/rounded"
                 android:ems="10"
-                android:maxLength="1"
                 android:gravity="center"
                 android:inputType="textCapCharacters"
+                android:maxLength="1"
                 android:text="A"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                 android:textSize="40sp" />
@@ -222,9 +222,9 @@
                 android:layout_marginEnd="10dp"
                 android:background="@drawable/rounded"
                 android:ems="10"
-                android:maxLength="1"
                 android:gravity="center"
                 android:inputType="textCapCharacters"
+                android:maxLength="1"
                 android:text="A"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                 android:textSize="40sp" />
@@ -236,9 +236,9 @@
                 android:layout_marginEnd="10dp"
                 android:background="@drawable/rounded"
                 android:ems="10"
-                android:maxLength="1"
                 android:gravity="center"
                 android:inputType="textCapCharacters"
+                android:maxLength="1"
                 android:text="A"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                 android:textSize="40sp" />
@@ -250,9 +250,9 @@
                 android:layout_marginEnd="10dp"
                 android:background="@drawable/rounded"
                 android:ems="10"
-                android:maxLength="1"
                 android:gravity="center"
                 android:inputType="textCapCharacters"
+                android:maxLength="1"
                 android:text="A"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                 android:textSize="40sp" />
@@ -264,9 +264,9 @@
                 android:layout_marginEnd="10dp"
                 android:background="@drawable/rounded"
                 android:ems="10"
-                android:maxLength="1"
                 android:gravity="center"
                 android:inputType="textCapCharacters"
+                android:maxLength="1"
                 android:text="A"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                 android:textSize="40sp" />
@@ -278,9 +278,9 @@
                 android:layout_marginEnd="10dp"
                 android:background="@drawable/rounded"
                 android:ems="10"
-                android:maxLength="1"
                 android:gravity="center"
                 android:inputType="textCapCharacters"
+                android:maxLength="1"
                 android:text="A"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                 android:textSize="40sp" />
@@ -298,9 +298,9 @@
                 android:layout_marginEnd="10dp"
                 android:background="@drawable/rounded"
                 android:ems="10"
-                android:maxLength="1"
                 android:gravity="center"
                 android:inputType="textCapCharacters"
+                android:maxLength="1"
                 android:text="A"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                 android:textSize="40sp" />
@@ -312,9 +312,9 @@
                 android:layout_marginEnd="10dp"
                 android:background="@drawable/rounded"
                 android:ems="10"
-                android:maxLength="1"
                 android:gravity="center"
                 android:inputType="textCapCharacters"
+                android:maxLength="1"
                 android:text="A"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                 android:textSize="40sp" />
@@ -326,9 +326,9 @@
                 android:layout_marginEnd="10dp"
                 android:background="@drawable/rounded"
                 android:ems="10"
-                android:maxLength="1"
                 android:gravity="center"
                 android:inputType="textCapCharacters"
+                android:maxLength="1"
                 android:text="A"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                 android:textSize="40sp" />
@@ -340,9 +340,9 @@
                 android:layout_marginEnd="10dp"
                 android:background="@drawable/rounded"
                 android:ems="10"
-                android:maxLength="1"
                 android:gravity="center"
                 android:inputType="textCapCharacters"
+                android:maxLength="1"
                 android:text="A"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                 android:textSize="40sp" />
@@ -354,9 +354,9 @@
                 android:layout_marginEnd="10dp"
                 android:background="@drawable/rounded"
                 android:ems="10"
-                android:maxLength="1"
                 android:gravity="center"
                 android:inputType="textCapCharacters"
+                android:maxLength="1"
                 android:text="A"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                 android:textSize="40sp" />
@@ -374,9 +374,9 @@
                 android:layout_marginEnd="10dp"
                 android:background="@drawable/rounded"
                 android:ems="10"
-                android:maxLength="1"
                 android:gravity="center"
                 android:inputType="textCapCharacters"
+                android:maxLength="1"
                 android:text="A"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                 android:textSize="40sp" />
@@ -388,9 +388,9 @@
                 android:layout_marginEnd="10dp"
                 android:background="@drawable/rounded"
                 android:ems="10"
-                android:maxLength="1"
                 android:gravity="center"
                 android:inputType="textCapCharacters"
+                android:maxLength="1"
                 android:text="A"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                 android:textSize="40sp" />
@@ -402,9 +402,9 @@
                 android:layout_marginEnd="10dp"
                 android:background="@drawable/rounded"
                 android:ems="10"
-                android:maxLength="1"
                 android:gravity="center"
                 android:inputType="textCapCharacters"
+                android:maxLength="1"
                 android:text="A"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                 android:textSize="40sp" />
@@ -416,9 +416,9 @@
                 android:layout_marginEnd="10dp"
                 android:background="@drawable/rounded"
                 android:ems="10"
-                android:maxLength="1"
                 android:gravity="center"
                 android:inputType="textCapCharacters"
+                android:maxLength="1"
                 android:text="A"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                 android:textSize="40sp" />
@@ -430,9 +430,9 @@
                 android:layout_marginEnd="10dp"
                 android:background="@drawable/rounded"
                 android:ems="10"
-                android:maxLength="1"
                 android:gravity="center"
                 android:inputType="textCapCharacters"
+                android:maxLength="1"
                 android:text="A"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                 android:textSize="40sp" />
@@ -450,9 +450,9 @@
                 android:layout_marginEnd="10dp"
                 android:background="@drawable/rounded"
                 android:ems="10"
-                android:maxLength="1"
                 android:gravity="center"
                 android:inputType="textCapCharacters"
+                android:maxLength="1"
                 android:text="A"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                 android:textSize="40sp" />
@@ -464,9 +464,9 @@
                 android:layout_marginEnd="10dp"
                 android:background="@drawable/rounded"
                 android:ems="10"
-                android:maxLength="1"
                 android:gravity="center"
                 android:inputType="textCapCharacters"
+                android:maxLength="1"
                 android:text="A"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                 android:textSize="40sp" />
@@ -478,9 +478,9 @@
                 android:layout_marginEnd="10dp"
                 android:background="@drawable/rounded"
                 android:ems="10"
-                android:maxLength="1"
                 android:gravity="center"
                 android:inputType="textCapCharacters"
+                android:maxLength="1"
                 android:text="A"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                 android:textSize="40sp" />
@@ -492,9 +492,9 @@
                 android:layout_marginEnd="10dp"
                 android:background="@drawable/rounded"
                 android:ems="10"
-                android:maxLength="1"
                 android:gravity="center"
                 android:inputType="textCapCharacters"
+                android:maxLength="1"
                 android:text="A"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                 android:textSize="40sp" />
@@ -506,14 +506,66 @@
                 android:layout_marginEnd="10dp"
                 android:background="@drawable/rounded"
                 android:ems="10"
-                android:maxLength="1"
                 android:gravity="center"
                 android:inputType="textCapCharacters"
+                android:maxLength="1"
                 android:text="A"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                 android:textSize="40sp" />
         </TableRow>
     </TableLayout>
+
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="120dp"
+        android:layout_height="53dp"
+        android:layout_marginBottom="8dp"
+        android:background="#0D5995"
+        android:enabled="false"
+        android:fontFamily="serif-monospace"
+        android:text="Submit"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="#5C0A6A"
+        android:drawableRight="@drawable/hint_item"
+        android:fontFamily="serif-monospace"
+        android:gravity="center|left"
+        android:paddingStart="10dp"
+        android:text="hint"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_submit"
+        app:layout_constraintHorizontal_bias="0.222"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="8dp"
+        android:background="#DC044E"
+        android:drawableRight="@drawable/skip_item"
+        android:fontFamily="serif-monospace"
+        android:gravity="center|left"
+        android:paddingStart="10dp"
+        android:text="Skip"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.465"
+        app:layout_constraintStart_toEndOf="@+id/btn_submit" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
