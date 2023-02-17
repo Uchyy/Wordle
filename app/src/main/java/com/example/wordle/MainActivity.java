@@ -2,9 +2,14 @@ package com.example.wordle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
@@ -15,26 +20,35 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+import java.util.stream.Stream;
 
 public class MainActivity extends AppCompatActivity {
 
     private androidx.appcompat.widget.Toolbar toolbar;
     private TextView scoreTextView;
     private ArrayList <EditText> editTexts = new ArrayList<>();
+    private ArrayList <EditText> rowOfEditText = new ArrayList<>();
     //private TableLayout table;
-    String word;
-    String score;
-    String original_word;
-    BufferedReader bufferedReader;
-    Button submit, skip, hint;
+    private String word = "";
+    private String score;
+    private String original_word;
+    private BufferedReader bufferedReader;
+    private Button submit, skip, hint;
+    private ArrayList <String> word_list = new ArrayList<>();
+    int count = 6;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         toolbar = findViewById(R.id.maintoolbar);
         setSupportActionBar(toolbar);
@@ -46,35 +60,80 @@ public class MainActivity extends AppCompatActivity {
         scoreTextView.setText("0");
         score = scoreTextView.getText().toString();
 
+
+            try {
+                getWord();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
+        Random rand = new Random();
+        int n = rand.nextInt(2500);
+        original_word = word_list.get(n);
+        String [] arr = new String[5];
+        arr[0] = Character.toString(original_word.charAt(0));
+        arr[1] = Character.toString(original_word.charAt(1));
+        arr[2] = Character.toString(original_word.charAt(2));
+        arr[3] = Character.toString(original_word.charAt(3));
+        arr[4] = Character.toString(original_word.charAt(4));
+        Log.d("The original word is: ", original_word);
+
+        //Set cursor to the first Edittext
+        editTexts.get(0).requestFocus();
+
         submit = findViewById(R.id.btn_submit);
         submit.setEnabled(false);
         hint = findViewById(R.id.btn_hint);
         skip = findViewById(R.id.btn_skip);
 
-
         for (EditText editText : editTexts) {
-            word += editText.getText().toString();
             editText.addTextChangedListener(new TextWatcher() {
                 @Override
                 public void beforeTextChanged(CharSequence s, int start, int count, int after) {
                     submit.setEnabled(false);
+                    submit.setBackgroundColor(Color.parseColor("#7899B3"));
+                    submit.setText(R.string.submit);
                 }
 
                 @Override
                 public void onTextChanged(CharSequence s, int start, int before, int count) {
+                    word += editText.getText().toString();
+                    rowOfEditText.add(editText);
                     nextTextView().requestFocus();
                     //checkWord();
                 }
 
                 @Override
                 public void afterTextChanged(Editable s) {
-                    for (int i = 4; i < editTexts.size() ; i+=5) {
+                    for (int i = 4; i < editTexts.size(); i+=5) {
                         if (editTexts.get(i) == editText) {
                             submit.setEnabled(true);
+                            submit.setBackgroundColor(Color.parseColor("#0D5995"));
                             submit.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View view) {
                                     Toast.makeText(getApplicationContext(), "Not Implemented!! You clicked SUBMIT!!", Toast.LENGTH_LONG).show();
+                                    Log.i("The complete word is: ", word);
+                                    //checkWord(); STARTS
+                                    for (int i = 0; i < rowOfEditText.size(); i++) {
+                                        String letter = rowOfEditText.get(i).getText().toString();
+                                        if (original_word.contains(letter)) {
+                                            if (arr[i].equals(letter)) {
+                                                rowOfEditText.get(i).setBackgroundColor(Color.parseColor("#578C59"));
+                                                rowOfEditText.get(i).setTextColor(Color.WHITE);
+                                            } else {
+                                                rowOfEditText.get(i).setBackgroundColor(Color.YELLOW);
+                                                rowOfEditText.get(i).setTextColor(Color.WHITE);
+                                            }
+
+                                        } else {
+                                            rowOfEditText.get(i).setBackgroundColor(Color.GRAY);
+                                            rowOfEditText.get(i).setTextColor(Color.WHITE);
+                                        }
+                                        count--;
+                                    }
+                                    word = "";
+                                    rowOfEditText.clear();
                                 }
                             });
                         }
@@ -139,11 +198,25 @@ public class MainActivity extends AppCompatActivity {
                 //Do what you need to do.
                 editText.setText("");
                 editText.setCursorVisible(false);
+                editText.setClickable(false);
+                //
+                // editText.setFocusableInTouchMode(false);
                 editTexts.add(editText);
             }
         }
     }
 
-    //public String getWord() {}
+    public void getWord() throws IOException {
+
+        String line = "";
+        bufferedReader = new BufferedReader(
+                new InputStreamReader(this.getAssets().open("words.txt")));
+        int i = 0;
+        while ((line = bufferedReader.readLine()) != null) {
+            word_list.add(line.toUpperCase());
+        }
+        bufferedReader.close();
+    }
+
 
 }

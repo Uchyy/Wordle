@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Wordle</string>
     <string name="empty">\u0020</string>
+    <string name="notAWord">NOT A WORD!</string>
+    <string name="submit">SUBMIT</string>
 
 </resources>

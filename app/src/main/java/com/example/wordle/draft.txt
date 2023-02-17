@@ -1,0 +1,58 @@
+    public void checkWord() {
+        if (word_list.contains(word)) {
+            Log.w("If list contains word: ", word);
+
+            if (original_word.equals(word)) {
+                gameLogic("all_correct", 0);
+                return;
+            }
+            char [] word_arr = word.toCharArray();
+            char [] orig_arr = original_word.toCharArray();
+
+            for (int i = 0; i < word_arr.length; i++) {
+                if(original_word.contains(Character.toString(word_arr[i])) ) {
+                    //change edittext colour
+                    if(word_arr[i] == orig_arr[i]) {
+                        //word's character is in correct place
+                        gameLogic("correct", i);
+                    } else {
+                        //word's character is in the wrong place
+                        gameLogic("wrong", i);
+                    }
+                } else {
+                    //word's character is not in the original word at all.. set all editext field to black
+                    gameLogic("all_wrong", 0);
+                }
+            }
+
+        } else {
+            submit.setBackgroundColor(Color.RED);
+            submit.setText(R.string.notAWord);
+            Log.w("If list contains word: ", "Not A Word");
+            return;
+        }
+    }
+
+    public void gameLogic(String order, int i) {
+        int size = rowOfEditText.size();
+        Log.i("Size of row", Integer.toString(size));
+        switch (order){
+            case "all_correct":
+                for (int j = 0; j < size; j++) {
+                    rowOfEditText.get(j).setBackgroundColor(Color.parseColor("#578C59"));
+                    rowOfEditText.get(j).setTextColor(Color.WHITE);
+                }
+            case "all_wrong":
+                for (int j = 0; j < size; j++) {
+                    rowOfEditText.get(j).setBackgroundColor(Color.GRAY);
+                    rowOfEditText.get(j).setTextColor(Color.WHITE);
+                }
+            case "wrong":
+                rowOfEditText.get(i).setBackgroundColor(Color.YELLOW);
+                rowOfEditText.get(i).setTextColor(Color.WHITE);
+            case "correct":
+                rowOfEditText.get(i).setBackgroundColor(Color.parseColor("#578C59"));
+                rowOfEditText.get(i).setTextColor(Color.WHITE);
+        }
+
+    }
