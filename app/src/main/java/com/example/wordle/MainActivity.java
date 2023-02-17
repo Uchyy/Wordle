@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.text.Editable;
@@ -42,7 +43,9 @@ public class MainActivity extends AppCompatActivity {
     private BufferedReader bufferedReader;
     private Button submit, skip, hint;
     private ArrayList <String> word_list = new ArrayList<>();
+    int [] win_Array = new int[5];
     int count = 6;
+    boolean win = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
         hint = findViewById(R.id.btn_hint);
         skip = findViewById(R.id.btn_skip);
 
+
         for (EditText editText : editTexts) {
             editText.addTextChangedListener(new TextWatcher() {
                 @Override
@@ -117,23 +121,35 @@ public class MainActivity extends AppCompatActivity {
                                     //checkWord(); STARTS
                                     for (int i = 0; i < rowOfEditText.size(); i++) {
                                         String letter = rowOfEditText.get(i).getText().toString();
-                                        if (original_word.contains(letter)) {
-                                            if (arr[i].equals(letter)) {
-                                                rowOfEditText.get(i).setBackgroundColor(Color.parseColor("#578C59"));
-                                                rowOfEditText.get(i).setTextColor(Color.WHITE);
+                                        if (word_list.contains(word)) {
+                                            if (original_word.contains(letter)) {
+                                                if (arr[i].equals(letter)) {
+                                                    rowOfEditText.get(i).setBackgroundColor(Color.parseColor("#578C59"));
+                                                    rowOfEditText.get(i).setTextColor(Color.WHITE);
+                                                } else {
+                                                    rowOfEditText.get(i).setBackgroundColor(Color.YELLOW);
+                                                    rowOfEditText.get(i).setTextColor(Color.WHITE);
+                                                }
+
                                             } else {
-                                                rowOfEditText.get(i).setBackgroundColor(Color.YELLOW);
+                                                rowOfEditText.get(i).setBackgroundColor(Color.GRAY);
                                                 rowOfEditText.get(i).setTextColor(Color.WHITE);
                                             }
-
+                                            count--;
                                         } else {
-                                            rowOfEditText.get(i).setBackgroundColor(Color.GRAY);
-                                            rowOfEditText.get(i).setTextColor(Color.WHITE);
+                                            submit.setBackgroundColor(Color.RED);
+                                            submit.setText(R.string.notAWord);
                                         }
-                                        count--;
+                                    }
+                                    for (int i = 0; i < rowOfEditText.size(); i++) {
+                                        //Original method is to check if bckground color is #578C59
+                                    }
+                                    if (win) {
+                                        Toast.makeText(getApplicationContext(), "YOU WON !!", Toast.LENGTH_LONG).show();
                                     }
                                     word = "";
                                     rowOfEditText.clear();
+
                                 }
                             });
                         }
@@ -150,6 +166,8 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         }
+        Toast.makeText(getApplicationContext(), "YOU LOST, LOSER!!", Toast.LENGTH_LONG).show();
+
 
     }
 
