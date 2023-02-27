@@ -132,6 +132,7 @@ ancho
 angel
 anger
 angle
+swipe
 angry
 angst
 anima
