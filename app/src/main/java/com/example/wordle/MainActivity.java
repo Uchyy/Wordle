@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
     HashMap <Character, Integer>  map1;
     boolean win = true;
     Long count;
+    //int i = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -115,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        //int i = 0;
         for (EditText editText : editTexts) {
             editText.addTextChangedListener(new TextWatcher() {
                 @Override
@@ -135,69 +136,75 @@ public class MainActivity extends AppCompatActivity {
 
                 @Override
                 public void afterTextChanged(Editable s) {
-                    for (int i = 4; i < editTexts.size(); i += 5) {
+                    int i = 0;
+                    for ( i = 4; i < editTexts.size(); i += 5) {
                         if (editTexts.get(i) == editText) {
                             submit.setEnabled(true);
                             submit.setBackgroundColor(Color.parseColor("#0D5995"));
+                            int finalI = i;
                             submit.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View view) {
-                                    Toast.makeText(getApplicationContext(), "Not Implemented!! You clicked SUBMIT!!", Toast.LENGTH_LONG).show();
+                                    //Toast.makeText(getApplicationContext(), "Not Implemented!! You clicked SUBMIT!!", Toast.LENGTH_LONG).show();
                                     Log.i("The complete word is: ", word);
                                     //checkWord(); STARTS
-                                    int i;
-                                    for (i = 0; i < rowOfEditText.size(); i++) {
-                                        String letter = rowOfEditText.get(i).getText().toString();
+                                    HashMap <Character, Integer> map2 = characterCount(word);
+                                    map1 = characterCount(original_word);
+                                    int j;
+                                    for (j = 0; j < rowOfEditText.size(); j++) {
+                                        String letter = rowOfEditText.get(j).getText().toString();
                                         char c = letter.charAt(0);
                                         //count = original_word.chars().filter(ch -> ch == letter.charAt(0)).count();
-                                        HashMap <Character, Integer> map2 = characterCount(word);
-                                        map1 = characterCount(original_word);
 
                                         if (word_list.contains(word)) {
 
                                             if (original_word.contains(letter)) {
                                                 int c1 = map1.get(c);
                                                 int c2 = map2.get(c);
-                                                Log.i(letter, Integer.toString(c1));
-                                                Log.i(letter, Integer.toString(c2));
-
+                                                Log.i("C1:", Integer.toString(c1));
+                                                Log.i("C2:", Integer.toString(c2));
                                                 //boolean equals = arr[i].equals(letter);
-                                                if (arr[i].equals(letter)) {
+                                                if (arr[j].equals(letter)) {
 
-                                                    rowOfEditText.get(i).setBackgroundColor(Color.parseColor("#578C59"));
-                                                    rowOfEditText.get(i).setTextColor(Color.WHITE);
-                                                    win_Array[i] = 1;
+                                                    rowOfEditText.get(j).setBackgroundColor(Color.parseColor("#578C59"));
+                                                    rowOfEditText.get(j).setTextColor(Color.WHITE);
+                                                    win_Array[j] = 1;
                                                 } else {
                                                     //logic issues;:
-                                                    if ( (c2 > c1) && (c1 >= 1)) {
-                                                        rowOfEditText.get(i).setBackgroundColor(Color.GRAY);
-                                                        rowOfEditText.get(i).setTextColor(Color.WHITE);
-                                                    } else {
-                                                        rowOfEditText.get(i).setBackgroundColor(Color.YELLOW);
-                                                        rowOfEditText.get(i).setTextColor(Color.WHITE);
-                                                    }
+                                                   // if ( (c2 > c1) && (c1 >= 1))
+                                                        if ( (c1 == 0) ){
+                                                        rowOfEditText.get(j).setBackgroundColor(Color.GRAY);
+                                                        rowOfEditText.get(j).setTextColor(Color.WHITE);
+                                                         } else {
+                                                        rowOfEditText.get(j).setBackgroundColor(Color.YELLOW);
+                                                        rowOfEditText.get(j).setTextColor(Color.WHITE);
+                                                        }
                                                 }
-                                                map2.put(c, c2 - 1);
-                                                map1.put(c, c1 - 1);
+                                                c2 = c2 -1;
+                                                c1 = c1 - 1;
+                                                map2.replace(c, c2);
+                                                map1.replace(c, c1);
 
                                             } else {
-                                                rowOfEditText.get(i).setBackgroundColor(Color.GRAY);
-                                                rowOfEditText.get(i).setTextColor(Color.WHITE);
+                                                rowOfEditText.get(j).setBackgroundColor(Color.GRAY);
+                                                rowOfEditText.get(j).setTextColor(Color.WHITE);
                                             }
                                         } else {
-                                            rowOfEditText.get(i).setBackgroundColor(Color.GRAY);
+                                            rowOfEditText.get(j).setBackgroundColor(Color.GRAY);
                                             submit.setBackgroundColor(Color.RED);
                                             submit.setText(R.string.notAWord);
                                             //setTexToNull(rowOfEditText);
                                         }
                                     }
-                                    boolean test = IntStream.of(win_Array).anyMatch(x -> x == 1);
+                                    boolean test = Arrays.stream(win_Array).allMatch(t -> t == 1);
+                                    Log.i("Testing....:", String.valueOf(test));
                                     if (test) {
                                         Toast.makeText(getApplicationContext(), "YOU ARE A WINNER!!", Toast.LENGTH_LONG).show();
                                     }
-                                    if (i == 29) {
+                                    if (finalI == 29 && !test) {
                                         Toast.makeText(getApplicationContext(), "YOU ARE A LOSER!!", Toast.LENGTH_LONG).show();
                                     }
+                                    Log.i("Were we at?", Integer.toString(finalI));
                                     word = "";
                                     rowOfEditText.clear();
                                     Arrays.fill(win_Array, 0);
@@ -205,6 +212,7 @@ public class MainActivity extends AppCompatActivity {
                             });
                         }
                     }
+
                 }
 
                 public TextView nextTextView() {
@@ -296,5 +304,10 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         return charCountMap;
+    }
+
+    public static boolean checkGame (int [] arr) {
+        boolean test = IntStream.of(arr).anyMatch(x -> x == 1);
+        return test;
     }
 }
